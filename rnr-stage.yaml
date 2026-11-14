@@ -1,17 +1,24 @@
-# CI configuration. Edit this file, then commit and push.
-#
-# 1. `stage` is already set for this project (single_cycle_riscv_m). Do not change it.
-# 2. Point `source_files` at your .sv file(s) for the module. The path below is only a suggestion: use any file
-#    names or folders (no spaces in paths). List every file the module needs, helper modules included, and do not
-#    define the same module in two listed files.
-# 3. Only if your module/port names differ from the spec, add under the module:
-#      top_module: my_name
-#      ports:  {spec_port: your_port}
-#    See the assignment handout for an example.
 yaml_version: 1
 stage: single_cycle_riscv_m
-
 modules:
   single_cycle_riscv_m:
     source_files:
-      - Single_Cycle_RISCV_M/rtl.sv
+      - Single_Cycle_RISCV_M/rtl/ALU.sv
+      - Single_Cycle_RISCV_M/rtl/ALU_Ctrl.sv
+      - Single_Cycle_RISCV_M/rtl/And_Gate.sv
+      - Single_Cycle_RISCV_M/rtl/IF_Adder.sv
+      - Single_Cycle_RISCV_M/rtl/MUX21.sv
+      - Single_Cycle_RISCV_M/rtl/Main_Control.sv
+      - Single_Cycle_RISCV_M/rtl/control_gen.sv
+      - Single_Cycle_RISCV_M/rtl/decoder.sv
+      - Single_Cycle_RISCV_M/rtl/imm_generator.sv
+      - Single_Cycle_RISCV_M/rtl/mux31.sv
+      - Single_Cycle_RISCV_M/rtl/reg_file.sv
+      - Single_Cycle_RISCV_M/rtl/rv32m_alu.sv
+      - Single_Cycle_RISCV_M/rtl/rv32m_control.sv
+      - Single_Cycle_RISCV_M/rtl/if_stage.sv
+      - Single_Cycle_RISCV_M/rtl/ID_STAGE.sv
+      - Single_Cycle_RISCV_M/rtl/EX_Stage.sv
+      - Single_Cycle_RISCV_M/rtl/WB_Stage.sv
+      - Single_Cycle_RISCV_M/rtl/Single_CycleRV.sv
+    top_module: Single_CycleRV
